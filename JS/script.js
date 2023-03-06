@@ -7,11 +7,10 @@ let pokemonList = [
 { name: 'Nidoqueen', height: 1.3, types: ['ground', 'poison']},
 ];
 // loop practice 
-for (let pokemon of pokemonList) {
+pokemonList.forEach(function(pokemon) {
     if (pokemon.height > 1) {
         document.write(pokemon.name + " - (Height: " + pokemon.height + ") - Yowza, that's big! <br>" ); 
     } else {
         document.write(pokemon.name + " - (Height: " + pokemon.height + ")<br>");
     }
-    
-}
+});
