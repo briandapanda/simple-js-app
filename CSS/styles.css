@@ -3,13 +3,28 @@ a {
     color: #2d2e28;
 }
 body {
-    background-color: #e2eaca;
+    background-color: #B1B7D1;
     font-family: incosolata, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
 }
 h1 {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold 700;
+    text-align: center;
+}
+.pokemon-button{
+    background-color: #e7e9f1;
+    border: 2px solid;
+    border-radius: 10px;
+    color: black; 
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+
 }
