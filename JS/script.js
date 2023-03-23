@@ -73,14 +73,6 @@ function loadDetails(pokemon){
     });
 }
 
-function addAllPokemon() {
-  pokemonRepository.getAll().then(function(pokemonList){
-    pokemonList.forEach(function(pokemon){
-      pokemonRepository.addListItem(pokemon);
-    });
-  });
-}
-
   return {
     getAll: getAll,
     add: add,
@@ -88,17 +80,14 @@ function addAllPokemon() {
     showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
-    addAllPokemon: addAllPokemon
   };
 })();
 
 pokemonRepository.loadList().then(function(){
   // calls all Pokemon after data is loaded
-  pokemonRepository.addAllPokemon();
-});
-
-pokemonRepository.getAll().then(function(pokemonList){
-  pokemonList.forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
+  pokemonRepository.getAll().then(function(pokemonList) {
+    pokemonList.forEach(function(pokemon){
+      pokemonRepository.addListItem(pokemon);
+    });
   });
 });
