@@ -1,4 +1,3 @@
-// IIFE begins here
 let pokemonRepository = (function(){
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
@@ -33,7 +32,48 @@ let pokemonRepository = (function(){
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function(){
-      console.log(pokemon);
+      let modalContainer = document.querySelector('#modal-container');
+      modalContainer.innerHTML = '';
+
+      let modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      
+      let closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      //adding event listener to close modal when button is clicked//
+      closeButtonElement.addEventListener('click', function(){
+        modalContainer.removeChild(modal);
+        modalContainer.classList.remove('is-visible');
+      });
+      //adding modal information//
+      let titleElement = document.createElement('h1');
+      titleElement.innerText = pokemon.name;
+
+      let heightElement = document.createElement('p');
+      heightElement.innerText = 'Height: ' + pokemon.height;
+
+      let imageElement = document.createElement('img');
+      imageElement.classList.add('modal-image');
+      imageElement.setAttribute('src', pokemon.imageUrl);
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(titleElement);
+      modal.appendChild(heightElement);
+      modal.appendChild(imageElement);
+      modalContainer.appendChild(modal);
+     
+
+      //add to close modal when clicking outside of modal//
+      window.addEventListener('click', function(event){
+        if (event.target === modal) {
+          modalContainer.removeChild(modal);
+        }
+      });
+
+      //shows modal
+      modalContainer.classList.add('is-visible');
     });
   }
 //gets list from API and adds pokemon as objects
