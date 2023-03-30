@@ -18,16 +18,28 @@ let pokemonRepository = (function(){
     });
   }
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');
-    listItem.appendChild(button);
-    pokemonList.appendChild(listItem);
-    button.addEventListener('click', function() {
-      showDetails(pokemon);
-    })
+    const pokemonList = $('.pokemon-list');
+    const listItem = $('<li></li>').text(pokemon.name);
+    listItem.addClass('list-group-item');
+    pokemonList.append(listItem);
+    //let pokemonList = document.querySelector('.pokemon-list');
+    //let listItem = document.createElement('li');
+    //let button = document.createElement('button');
+    //button.innerText = pokemon.name;
+    //button.classList.add('pokemon-button');
+    //listItem.appendChild(button);
+    //pokemonList.appendChild(listItem);
+    //button.addEventListener('click', function() {
+    //  showDetails(pokemon);
+    //})//
+  }
+
+  function addLoadMoreButton() {
+    const buttonContainer = $('.container');
+    const loadMoreButton = $('<button></button>').text('Load More');
+    loadMoreButton.addClass('btn btn-primary my-4');
+    loadMoreButton.attr('id','load-more-btn');
+    buttonContainer.append(loadMoreButton);
   }
 
   function showDetails(pokemon) {
