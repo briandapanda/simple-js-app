@@ -41,8 +41,9 @@ let pokemonRepository = (function(){
   
       modalTitle.innerHTML = '<h1>' + pokemon.name + '</h1>';
       modalBody.innerHTML = '<img class="modal-img" src="' + pokemon.imageUrl + '">' +
-        '<p>Height: ' + pokemon.height + '</p>' +
-        '<p>Type: ' + (pokemon.types ? pokemon.types.join(', ') : '') + '</p>';
+        '<p>Height: ' + (pokemon.height / 10) + ' m</p>' +
+        '<p>Types: ' + (pokemon.types ? pokemon.types.join(', ') : '') + '</p>' +
+        '<p>Weight: ' + (pokemon.weight / 10) + ' kg</p>';
   
       $('#pokemonDetailModal').modal('toggle');
     });
@@ -101,7 +102,7 @@ function loadDetails(pokemon) {
     modalBody.empty();
   // creating element for name in modal content
     let nameElement = $('<h1>' + pokemon.name + '</h1>');
-    //creating img
+    //creating image 
     let imageElementFront = $('<img class="modal-img" style="width:50%">');
     imageElementFront.attr('src', pokemon.imageUrlFront);
     let imageElementBack = $('<img class="modal-img" style="width:50%">');
