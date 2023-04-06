@@ -92,49 +92,6 @@ function loadDetails(pokemon) {
     });
 }
 
-  
-  function showModal(pokemon) {
-    let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
-
-    modalTitle.empty();
-    modalBody.empty();
-  // creating element for name in modal content
-    let nameElement = $('<h1>' + pokemon.name + '</h1>');
-    //creating image 
-    let imageElementFront = $('<img class="modal-img" style="width:50%">');
-    imageElementFront.attr('src', pokemon.imageUrlFront);
-    let imageElementBack = $('<img class="modal-img" style="width:50%">');
-    imageElementBack.attr('src', pokemon.imageUrlBack);
-    let heightElement = $('<p>' + 'height : ' + pokemon.height + '</p>');
-    let weightElement = $('<p>' + 'weight : ' + pokemon.weight + '</p>');
-    let typesElement = $('<p>' + 'types : ' + pokemon.types +'</p>');
-    let abilitiesElement = $('<p>' + 'abilities : ' + pokemon.abilities + '</p>');
-
-    modalTitle.append(nameElement);
-    modalBody.append(imageElementFront);
-    modalBody.append(imageElementBack);
-    modalBody.append(heightElement);
-    modalBody.append(weightElement);
-    modalBody.append(typesElement);
-    modalBody.append(abilitiesElement);
-
-    // Find the close button element
-    const $closeButton = $('<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>');
-    const $span = $('<span aria-hidden="true">&times;</span>');
-    $closeButton.append($span);
-
-    // Add a click event listener to the close button
-    $closeButton.on('click', function () {
-      $('#exampleModal').modal('hide');
-    });
-
-    // Append the close button to the modal
-    $('.modal-content').append($closeButton);
-
-  }
-
   return {
     getAll: getAll,
     add: add,
