@@ -10,18 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="dist/styles.min.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <!--Nav bar bootstrap-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pokemon List</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <header class="page-header"> 
+        <a href="index.html">
+          <img src="images/pokedex-icon.jpg" alt="logo" class="page-header__item logo">
+        </a>
+      </header>
+      <a class="navbar-brand" href="#">Pokédex</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navBarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav justify-content-center">
           <li class="nav-item">
             <a href="index.html" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
           </li>
@@ -37,7 +42,7 @@
 
 <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
