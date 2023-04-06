@@ -1,9 +1,9 @@
 /* pokedex styling page */
 a {
-  color: #2d2e28;
+  color: #000000;
 }
 body {
-  background-color: #B1B7D1;
+  background-color: #ffda50;
   font-family: incosolata, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -14,18 +14,11 @@ h1 {
   font-weight: bold 700;
   text-align: center;
 }
-.pokemon-button{
-  background-color: #e7e9f1;
-  border: 2px solid;
-  border-radius: 10px;
-  color: black; 
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.logo{
+  height: 50px;
+  width: 50px;
 }
+
 
 .modal-show{
 display: none;
@@ -59,4 +52,20 @@ font-weight: bold;
 color: #000;
 text-decoration: none;
 cursor: pointer;
+}
+
+.btn{
+  font-size: 16px;
+  padding: 10px 10px;
+  background-color:white;
+  border-color: black;
+}
+.btn-primary{
+  color: black;
+}
+.list-group-item{
+  background-color: transparent;
+  border: transparent;
+  text-align: center;
+  transition: 0.2s opacity;
 }
