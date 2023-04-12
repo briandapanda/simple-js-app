@@ -7,6 +7,13 @@
         "eslint:recommended"
     ],
     "rules": {
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "indent": [ "error", "tab"],
+        "keyword-spacing": ["error", {"before": true}],
+        "space-infix-ops": ["error", {"int32Hint": false}],
+        "template-curly-spacing": ["error", "never"],
+        "wrap-iife": ["error", "any"],
+        "space-before-function-paren": ["error", "always"]
+
     }
 }
