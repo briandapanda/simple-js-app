@@ -54,18 +54,28 @@ text-decoration: none;
 cursor: pointer;
 }
 
-.btn{
+.btn {
   font-size: 16px;
   padding: 10px 10px;
   background-color:white;
   border-color: black;
 }
-.btn-primary{
+.btn-primary {
   color: black;
+  width: 190px;
+  height: 95px;
 }
-.list-group-item{
+.list-group-item {
   background-color: transparent;
   border: transparent;
   text-align: center;
   transition: 0.2s opacity;
+}
+.container {
+ padding: 100px ;
+}
+.list-group{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

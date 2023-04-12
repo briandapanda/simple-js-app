@@ -51,7 +51,9 @@ let pokemonRepository = (function(){
   
   //gets list from API and adds pokemon as objects
   function loadList() {
-    return fetch(apiUrl)
+    return fetch(apiUrl, {
+      mode: 'cors'
+    })
       .then(function(response){
         return response.json();
       })
@@ -75,7 +77,9 @@ let pokemonRepository = (function(){
 
 function loadDetails(pokemon) {
   let url = pokemon.detailsUrl;
-  return fetch(url)
+  return fetch(url, {
+    mode: 'cors'
+  })
     .then(function (response) {
       return response.json();
     })
