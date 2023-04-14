@@ -25,10 +25,16 @@ let pokemonRepository = (function(){
     const $pokemonList = $('.pokemon-list');
     const $listItem = $('<li class="list-group-item"></li>');
     const $button = $('<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="showDetailsButton"></button>');
+
+    //Check if button for pokemon already exists
+    const existingButton = $pokemonList.find('button:contains(${pokemon.name})');
+    if (existingButton.length) {
+      return;
+    }
   
     $button.text(pokemon.name);
     $button.click(function () {
-      pokemonRepository.showDetails(pokemon);
+      showDetails(pokemon);
     });
   
     $listItem.append($button);
